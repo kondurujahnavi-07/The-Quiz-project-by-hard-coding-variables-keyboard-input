@@ -40,22 +40,17 @@ def main():
             "correct_answer": 1  # H2O is the 1st option
         }
     ]
-
     score = 0
-
     print("Welcome to the Quiz App!")
     print("-------------------------")
-
     for q in questions:
         display_question(q["question"], q["options"])
         user_answer = get_user_answer()
-
         if check_answer(user_answer, q["correct_answer"]):
             print("Correct!\n")
             score += 1
         else:
             print(f"Wrong! The correct answer was: {q['options'][q['correct_answer'] - 1]}\n")
-
     print(f"Your final score is: {score}/{len(questions)}")
     print("Thank you for playing!")
 
